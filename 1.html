@@ -1,0 +1,41 @@
+<html>
+
+<body>
+    <input type="number" id="a" placeholder="Enter 1st number"> <br> <br>
+    <input type="number" id="b" placeholder="Enter 2nd number"> <br> <br>
+    <input type="button" value="Add"
+        onclick="add(document.getElementById('a').value, document.getElementById('b').value)">
+    <input type="button" value="Subtract"
+        onclick="sub(document.getElementById(' a').value, document.getElementById('b').value)">
+    <input type="button" value="Multiply"
+        onclick="mul(document.getElementById('a').value, document.getElementById('b').value)">
+    <input type="button" value="Divide"
+        onclick="div(document.getElementById('a').value, document.getElementById('b').value)">
+    <p id="result"></p>
+
+
+    <script>
+        function add(a, b) {
+            var result = parseInt(a) + parseInt(b);
+            document.getElementById('result').innerHTML = "Result: " + result;
+        }
+        function sub(a, b) { 
+            var result = parseInt(a) - parseInt(b);
+            document.getElementById('result').innerHTML = "Result: " + result;
+        } function mul(a, b) {
+            var result = parseInt(a) * parseInt(b);
+            document.getElementById('result').innerHTML = "Result: " + result;
+        } function div(a, b) {
+            if (b == 0) {
+                document.getElementById('result').innerHTML = "Cannot divide by zero";
+            }
+            else {
+                var result = parseInt(a) / parseInt(b);
+                document.getElementById('result').innerHTML = "Result: " + result;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

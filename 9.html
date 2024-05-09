@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        // Set a cookie using document.cookie
+        document.cookie = "username=Pratik; expires=Thu, 01 Jan 2026";
+        document.cookie = "name=Sabin; expires=Thu, 01 Jan 2026";
+
+        // Read a cookie 
+        function getCookie(name) {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.indexOf(name + '=') === 0) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+        // Delete a cookie
+        function deleteCookie(name) {
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970';
+        }
+
+        // Example usage:
+        var username = getCookie("username");
+        console.log("Username:", username); // Output: Pratik
+        var name = getCookie("name");
+        console.log("name:", name);//output: Sabin
+
+        deleteCookie("username");
+        console.log("Cookie " + username + " deleted.");
+
+        console.log("Updated cookie: ", document.cookie); // Output: (empty string) - No cookies remain
+    </script>
+
+</body>
+
+</html>

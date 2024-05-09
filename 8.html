@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <p id="p1" value="Got element by id"></p>
+    <p class="p2" value="Got element by class"></p>
+    <span value="Got element by tag name"></span>
+    <button onclick="create()">Create paragraph</button>
+    <div id="output"></div>
+    <script>
+        function create() {
+            var paragraph = document.createElement("p")
+            paragraph.textContent = "This is a new paragraph";
+            document.getElementById("output").appendChild(paragraph);
+
+            console.log(document.getElementById("p1").getAttribute("value"));
+            var Classname = document.getElementsByClassName("p2");
+            for (let i = 0; i < Classname.length; i++) {
+                var value = Classname[i].getAttribute("value");
+                console.log(value);
+            }
+            var element = document.getElementsByTagName("span");
+            for (let i = 0; i < element.length; i++) {
+                var value = element[i].getAttribute("value");
+                console.log(value);
+            }
+        }
+    </script>
+</body>
+
+</html>

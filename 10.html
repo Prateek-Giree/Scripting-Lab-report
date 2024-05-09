@@ -1,0 +1,45 @@
+<html>
+<body>
+    <form method="get" action="#" onsubmit="return validate();">
+        <input type="text" id="name" name="name" placeholder="Name" required> <br> <br>
+        <input type="tel" id="phone" name="phone" placeholder="Phone" required> <br><br>
+        <input type="email" id="email" name="email" placeholder="Email" required> <br><br>
+        <input type="submit" value="Submit"> <br>
+        <span id="error"></span>
+
+    </form>
+
+    <script> 
+        function validate() {
+
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+
+            let nameRegex = new RegExp("^[a-zA-Z ]{4,30}$");
+            if (!nameRegex.test(name)) {
+                document.getElementById("error").innerHTML = "Invalid Name";
+                return false;
+            }
+
+            let phoneRegx = new RegExp("^[9][7-8][0-9]{8}");
+            if (!phoneRegx.test(phone)) {
+                document.getElementById("error").innerHTML = "Invalid Phone";
+                return false;
+            }
+
+            let emailRegex = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$");
+            if (!emailRegex.test(email)) {
+                document.getElementById("error").innerHTML = "Invalid Email";
+                return false;
+            }
+
+            /*------------------------------------------------*/
+
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

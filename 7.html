@@ -1,0 +1,30 @@
+<html>
+
+<body>
+    <button value="delete" onclick="confirm('Are you sure want to delete');">Delete</button>
+    <button onclick="Open()">open window</button>
+    <button onclick="Close()">Close window</button>
+    <button onclick="Focus()">Focus window</button>
+    <button onclick="Blur()">Blur window</button>
+    <script>
+        name = prompt("What is your name?");
+        window.alert("Hello, " + name);
+        var google; // Declaring google globally
+        function Open() {
+            google = window.open("", "", "width=200,height=200");
+        }
+        function Close() {
+            if (google) { // Checking if google is defined
+                google.close();
+            }
+        }
+        function Focus() { 
+            google.focus();
+        }
+        function Blur() {
+            google.blur();
+        }
+    </script>
+</body>
+
+</html>

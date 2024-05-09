@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="myForm">
+        <input type="text" id="myInput">
+        <input type="submit" id="myButton" value="Submit">
+    </form>
+    <script>
+        // Code to be executed when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('myButton').addEventListener('click', function () {
+                console.log('Button clicked');
+            });
+
+            // Example 2: Handling a key press event
+            document.addEventListener('keydown', function (event) {
+                // Code to be executed when a key is pressed
+                console.log('Key pressed: ' + event.key);
+            });
+
+            // Example 3: Handling a form submission event
+            document.getElementById('myForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                console.log('Form submitted with value: ' + document.getElementById('myInput').value);
+            });
+        });
+    </script>
+</body>
+
+</html>

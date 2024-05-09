@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var fruits = ['apple', 'banana', 'orange'];
+
+        fruits.push('grape');
+        console.log("Push method: " + fruits);
+        fruits.pop();
+        console.log("Pop method: " + fruits);
+        fruits.shift(); //remove first element
+        console.log("shift method: " + fruits);
+        fruits.unshift('kiwi'); //add at 1st index of array
+        console.log("unshift method: " + fruits);
+        console.log("slice method: " + fruits.slice(0, 3)); //return new array from 1 to 3 (exclusive)
+        
+        console.log("concat method:" + fruits.concat("mango", "pear")); //add more elements to array
+
+        var fruitsString = fruits.join('- '); //join array elements with hyphen ie kiwi- banana- orange
+        console.log(fruitsString);
+
+        console.log("indexof banana: " + fruits.indexOf('banana'));
+
+        var fruitsToString = fruits.toString();
+        console.log(fruitsToString); //convert into string, join with comma
+        console.log("sort method" + fruits.sort());
+
+        console.log("reverse method: " + fruits.reverse());
+
+        console.log("forEach method: ");
+        fruits.forEach((fruit) => {
+            console.log(fruit);
+        });
+    </script>
+</body>
+
+</html>

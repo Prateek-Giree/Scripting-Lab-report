@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getdata() {
+            var objXMLHttpRequest = new XMLHttpRequest();
+            objXMLHttpRequest.onreadystatechange = function () {
+                if (objXMLHttpRequest.readyState === 4) {
+                    if (objXMLHttpRequest.status === 200) {
+                        document.getElementById("result").innerHTML = objXMLHttpRequest.responseText;
+                    }
+                    else {
+                        alert('Error Code: ' + objXMLHttpRequest.status);
+                        alert('Error Message: ' + objXMLHttpRequest.statusText);
+                    }
+                }
+            }
+            objXMLHttpRequest.open('GET', 'ajaxexample.php',);
+            objXMLHttpRequest.send();
+        }
+    </script>
+
+    <input type="button" onclick="getdata();" name="btn" value="Get server data" />
+    <div id="result"></div>
+</body>
+
+</html>

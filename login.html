@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <form action="">
+      <label for="">Email</label>
+      <input type="email" id="email" name="email" /> <br /><br />
+      <label for="">Password</label>
+      <input type="password" id="pass" name="pass" id="" /> <br /><br />
+      <input type="button" value="Login" onclick="getdata()" />
+    </form>
+
+    <script>
+      function getdata() {
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+        var objXMLHttpRequest = new XMLHttpRequest();
+        objXMLHttpRequest.onreadystatechange = function () { 
+          if (objXMLHttpRequest.readyState === 4) {
+            if (objXMLHttpRequest.status === 200) {
+              // document.getElementById("").innerHTML = objXMLHttpRequest.responseText;
+              //alert(objXMLHttpRequest.responseText);
+              if (objXMLHttpRequest.responseText.trim() == "success") {
+                alert("congratulation Login Success");
+              } else {
+                alert("Login Failed");
+              }
+            } 
+          }
+        };
+        objXMLHttpRequest.open(
+          "GET",
+          "login.php?email=" + email + "&pass=" + pass
+        );
+        objXMLHttpRequest.send();
+      }
+    </script>
+  </body>
+</html>

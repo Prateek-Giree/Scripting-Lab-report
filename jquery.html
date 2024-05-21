@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $.ajax({
+          url: "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js",
+          success: function (result) {
+            alert("success");
+            $("#div").html(result);
+          }
+        });
+      });
+    });
+  </script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="div">
+    <h2>Let JQuery AJAX change this text</h2>
+  </div>
+  <button>Get External content</button>
+</body>
+
+</html>
